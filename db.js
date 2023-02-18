@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
-const mongooseURI = 'mongodb://localhost:27017/cloud-scribe';
+const dotenv = require('dotenv');
+
+dotenv.config({path: './config.env'})
+
+const mongooseURI = process.env.MONGO_URI;
 
 mongoose.set('strictQuery', true)
 
