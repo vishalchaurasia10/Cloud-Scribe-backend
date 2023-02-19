@@ -42,7 +42,7 @@ router.post('/createuser', [
             })
             const authToken = jwt.sign({ id: user.id }, JWT_SECRET)
             success = true;
-            return res.status(200).json({success, authToken, name : user.name})
+            return res.status(200).json({success, authToken, name : user.name,email : user.email})
         }
     }
     catch(err)
@@ -81,7 +81,7 @@ router.post('/login', [
         }
         const authToken = jwt.sign({ id: user.id }, JWT_SECRET)
         success = true;
-        return res.status(200).json({success, authToken, name : user.name})
+        return res.status(200).json({success, authToken, name : user.name, email : user.email})
     }
     catch(err)
     {
